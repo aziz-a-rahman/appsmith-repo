@@ -2,7 +2,7 @@
   "pluginType": "API",
   "pluginId": "restapi-plugin",
   "unpublishedAction": {
-    "name": "count_student",
+    "name": "store_student",
     "datasource": {
       "name": "testapi",
       "pluginId": "restapi-plugin",
@@ -13,11 +13,11 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Page1",
+    "pageId": "Student",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
-      "path": "/students/count",
+      "path": "/students",
       "headers": [
         {
           "key": "content-type",
@@ -26,8 +26,9 @@
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
+      "body": "{\n\tfirstName: \"{{Input1.text}}\",\n\tage: \"{{Input2.text}}\",\n\temail: \"{{Input3.text}}\"\n}",
       "bodyFormData": [],
-      "httpMethod": "GET",
+      "httpMethod": "POST",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -38,17 +39,25 @@
       }
     },
     "executeOnLoad": false,
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [],
+    "jsonPathKeys": [
+      "Input1.text",
+      "Input2.text",
+      "Input3.text"
+    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Page1_count_student",
+  "id": "Student_store_student",
   "deleted": false,
-  "gitSyncId": "631ec4c981cfa22c0a78dfb6_631ece4081cfa22c0a78dfc6"
+  "gitSyncId": "631ec4c981cfa22c0a78dfb6_631eeed481cfa22c0a78dfda"
 }
