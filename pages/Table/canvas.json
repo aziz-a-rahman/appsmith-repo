@@ -29,7 +29,7 @@
               "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
               "isVisibleDownload": true,
               "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
-              "topRow": 8,
+              "topRow": 4,
               "isSortable": true,
               "type": "TABLE_WIDGET_V2",
               "inlineEditingSaveOption": "ROW_LEVEL",
@@ -88,11 +88,42 @@
                 },
                 {
                   "key": "primaryColumns.email.computedValue"
+                },
+                {
+                  "key": "primaryColumns.EditActions2.saveButtonColor"
+                },
+                {
+                  "key": "primaryColumns.EditActions2.saveBorderRadius"
+                },
+                {
+                  "key": "primaryColumns.EditActions2.discardBorderRadius"
+                },
+                {
+                  "key": "primaryColumns.EditActions2.isSaveDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions2.isDiscardDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions3.saveButtonColor"
+                },
+                {
+                  "key": "primaryColumns.EditActions3.saveBorderRadius"
+                },
+                {
+                  "key": "primaryColumns.EditActions3.discardBorderRadius"
+                },
+                {
+                  "key": "primaryColumns.EditActions3.isSaveDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions3.isDiscardDisabled"
                 }
               ],
               "leftColumn": 5,
               "delimiter": ",",
               "defaultSelectedRowIndex": 0,
+              "showInlineEditingOptionDropdown": true,
               "accentColor": "{{appsmith.theme.colors.primaryColor}}",
               "isVisibleFilters": true,
               "isVisible": true,
@@ -133,11 +164,26 @@
                 "id",
                 "firstName",
                 "age",
-                "email"
+                "email",
+                "EditActions2",
+                "EditActions3"
               ],
-              "dynamicPropertyPathList": [],
+              "dynamicPropertyPathList": [
+                {
+                  "key": "primaryColumns.EditActions2.isSaveDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions2.isDiscardDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions3.isSaveDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions3.isDiscardDisabled"
+                }
+              ],
               "displayName": "Table",
-              "bottomRow": 36,
+              "bottomRow": 35,
               "columnWidthMap": {
                 "task": 245,
                 "step": 62,
@@ -146,7 +192,14 @@
               "parentRowSpace": 10,
               "hideCard": false,
               "parentColumnSpace": 17.9375,
-              "dynamicTriggerPathList": [],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onRowSelected"
+                },
+                {
+                  "key": "primaryColumns.EditActions2.onSave"
+                }
+              ],
               "primaryColumns": {
                 "id": {
                   "allowCellWrapping": false,
@@ -187,8 +240,8 @@
                   "enableSort": true,
                   "isVisible": true,
                   "isDisabled": false,
-                  "isCellEditable": false,
-                  "isEditable": false,
+                  "isCellEditable": true,
+                  "isEditable": true,
                   "isCellVisible": true,
                   "isDerived": false,
                   "label": "firstName",
@@ -211,8 +264,8 @@
                   "enableSort": true,
                   "isVisible": true,
                   "isDisabled": false,
-                  "isCellEditable": false,
-                  "isEditable": false,
+                  "isCellEditable": true,
+                  "isEditable": true,
                   "isCellVisible": true,
                   "isDerived": false,
                   "label": "age",
@@ -235,19 +288,87 @@
                   "enableSort": true,
                   "isVisible": true,
                   "isDisabled": false,
-                  "isCellEditable": false,
-                  "isEditable": false,
+                  "isCellEditable": true,
+                  "isEditable": true,
                   "isCellVisible": true,
                   "isDerived": false,
                   "label": "email",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
                   "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"email\"]))}}"
+                },
+                "EditActions2": {
+                  "allowCellWrapping": false,
+                  "index": 5,
+                  "width": 150,
+                  "originalId": "EditActions2",
+                  "id": "EditActions2",
+                  "alias": "EditActions2",
+                  "columnType": "editActions",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": true,
+                  "label": "Save / Discard",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "",
+                  "buttonStyle": "rgb(3, 179, 101)",
+                  "saveIconAlign": "left",
+                  "discardIconAlign": "left",
+                  "saveActionLabel": "Save",
+                  "discardActionLabel": "Discard",
+                  "saveButtonColor": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
+                  "discardButtonColor": "#F22B2B",
+                  "saveBorderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "discardBorderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "discardButtonVariant": "TERTIARY",
+                  "isSaveDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}",
+                  "isDiscardDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}",
+                  "onSave": "{{update_student.run(() => read_students.run(), () => {})}}"
+                },
+                "EditActions3": {
+                  "allowCellWrapping": false,
+                  "index": 6,
+                  "width": 150,
+                  "originalId": "EditActions3",
+                  "id": "EditActions3",
+                  "alias": "EditActions3",
+                  "columnType": "editActions",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": true,
+                  "label": "Save / Discard",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "",
+                  "buttonStyle": "rgb(3, 179, 101)",
+                  "saveIconAlign": "left",
+                  "discardIconAlign": "left",
+                  "saveActionLabel": "Save",
+                  "discardActionLabel": "Discard",
+                  "saveButtonColor": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
+                  "discardButtonColor": "#F22B2B",
+                  "saveBorderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "discardBorderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "discardButtonVariant": "TERTIARY",
+                  "isSaveDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}",
+                  "isDiscardDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}"
                 }
               },
+              "onRowSelected": "",
               "key": "w4yz69rj3g",
               "isDeprecated": false,
-              "rightColumn": 39,
+              "rightColumn": 49,
               "textSize": "0.875rem",
               "widgetId": "6rgmapjpz3",
               "tableData": "{{read_students.data}}",
