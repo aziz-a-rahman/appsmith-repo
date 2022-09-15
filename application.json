@@ -3,6 +3,10 @@
     {
       "id": "Student",
       "isDefault": true
+    },
+    {
+      "id": "Table",
+      "isDefault": false
     }
   ],
   "viewMode": false,
