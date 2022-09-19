@@ -7,6 +7,10 @@
     {
       "id": "Table",
       "isDefault": false
+    },
+    {
+      "id": "DMN",
+      "isDefault": false
     }
   ],
   "viewMode": false,
