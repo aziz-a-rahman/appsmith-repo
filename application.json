@@ -11,6 +11,10 @@
     {
       "id": "DMN",
       "isDefault": false
+    },
+    {
+      "id": "Student_DMN",
+      "isDefault": false
     }
   ],
   "viewMode": false,
