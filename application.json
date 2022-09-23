@@ -15,6 +15,10 @@
     {
       "id": "Student_DMN",
       "isDefault": false
+    },
+    {
+      "id": "App_LP_Kog",
+      "isDefault": false
     }
   ],
   "viewMode": false,
