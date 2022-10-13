@@ -2,7 +2,7 @@
   "pages": [
     {
       "id": "Student",
-      "isDefault": true
+      "isDefault": false
     },
     {
       "id": "Table",
@@ -18,6 +18,26 @@
     },
     {
       "id": "App_LP_Kog",
+      "isDefault": true
+    },
+    {
+      "id": "Header and Footer",
+      "isDefault": false
+    },
+    {
+      "id": "App_Kogi_Bpmn",
+      "isDefault": false
+    },
+    {
+      "id": "Home",
+      "isDefault": false
+    },
+    {
+      "id": "About",
+      "isDefault": false
+    },
+    {
+      "id": "Contact",
       "isDefault": false
     }
   ],
