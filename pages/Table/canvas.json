@@ -118,6 +118,9 @@
                 },
                 {
                   "key": "primaryColumns.EditActions3.isDiscardDisabled"
+                },
+                {
+                  "key": "primaryColumns.addresses.computedValue"
                 }
               ],
               "leftColumn": 5,
@@ -165,6 +168,7 @@
                 "firstName",
                 "age",
                 "email",
+                "addresses",
                 "EditActions2",
                 "EditActions3"
               ],
@@ -363,6 +367,32 @@
                   "discardButtonVariant": "TERTIARY",
                   "isSaveDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}",
                   "isDiscardDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}"
+                },
+                "addresses": {
+                  "allowCellWrapping": false,
+                  "index": 4,
+                  "width": 150,
+                  "originalId": "addresses",
+                  "id": "addresses",
+                  "alias": "addresses",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "text",
+                  "textColor": "",
+                  "textSize": "0.875rem",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": false,
+                  "label": "addresses",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"addresses\"]))}}",
+                  "cellBackground": ""
                 }
               },
               "onRowSelected": "",

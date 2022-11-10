@@ -2,7 +2,7 @@
   "pluginType": "API",
   "pluginId": "restapi-plugin",
   "unpublishedAction": {
-    "name": "read_students",
+    "name": "Api1",
     "datasource": {
       "name": "testapi",
       "pluginId": "restapi-plugin",
@@ -13,19 +13,32 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Table",
+    "pageId": "MySql",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
-      "path": "/students",
       "headers": [
         {
-          "key": "content-type",
-          "value": "application/json"
+          "key": "",
+          "value": ""
+        },
+        {
+          "key": "",
+          "value": ""
         }
       ],
       "encodeParamsToggle": true,
-      "queryParameters": [],
+      "queryParameters": [
+        {
+          "key": "",
+          "value": ""
+        },
+        {
+          "key": "",
+          "value": ""
+        }
+      ],
+      "body": "",
       "bodyFormData": [],
       "httpMethod": "GET",
       "pluginSpecifiedTemplates": [
@@ -34,11 +47,10 @@
         }
       ],
       "formData": {
-        "apiContentType": "application/json"
+        "apiContentType": "none"
       }
     },
-    "executeOnLoad": true,
-    "dynamicBindingPathList": [],
+    "executeOnLoad": false,
     "isValid": true,
     "invalids": [],
     "messages": [],
@@ -48,7 +60,7 @@
     "policies": [],
     "userPermissions": []
   },
-  "id": "Table_read_students",
+  "id": "MySql_Api1",
   "deleted": false,
-  "gitSyncId": "631ec4c981cfa22c0a78dfb6_6322d3a281cfa22c0a78e05d"
+  "gitSyncId": "631ec4c981cfa22c0a78dfb6_636ca4a4c910802bea20b30e"
 }
